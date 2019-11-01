@@ -1,0 +1,36 @@
+//Bradley Grose
+public class SlopedLine implements Line{
+
+	//Instance Variable
+	private double slope;
+
+	//Default Constructor
+	public SlopedLine() 
+	{
+		this.slope = 1;
+	}
+
+	//Paramater Constructor
+	public SlopedLine(double aSlope) 
+	{
+		this.slope = aSlope;
+	}
+
+	//Getters
+	public double getSlope() 
+	{
+		return this.slope;
+	}
+
+	//Setters
+	public void setSlope(double aSlope) 
+	{
+		this.slope = aSlope;
+	}
+
+	//Gets Y cordinates
+	public double getYPoint(double xCord) 
+	{
+		return this.getSlope() * xCord;
+	}
+}

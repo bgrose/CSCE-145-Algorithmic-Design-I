@@ -1,0 +1,24 @@
+/*
+ * Written By Bradley Grose
+ */
+
+import java.util.Scanner;
+
+public class CoffeeTester {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Let’s Coffee!!!1!11!!ONE!!!1!\n\n");
+		
+		Coffee coffee01 = new Coffee();
+		Coffee coffee02 = new Coffee();
+		
+		//Coffee 01
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("What’s the name of the first coffee?");
+		
+		
+		
+	}
+	
+}

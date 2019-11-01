@@ -1,0 +1,57 @@
+/*
+ * Written By Bradley Grose
+ */
+public class Clothing {
+	
+	//Sets Enums or Instances
+	enum Type {UNDERGARMENT, SOCKS, STOCKINGS, TOP, BOTTOM, CAPE};
+	enum Color {BROWN, RED, PINK, ORANGE, GREEN, BLUE, PURPLE, GREY};
+	
+	private Type type;
+	private Color color;
+	
+	//Constructors
+	public Clothing() //Default
+	{
+		setType(Type.CAPE);
+		setColor(Color.BLUE);
+	}
+	public Clothing(Type atype, Color aColor) //Paramaterized
+	{
+		this.setType(atype);
+		this.setColor(aColor);
+	}
+	
+	//Setters
+	public void setType(Type aType) //CHECK VALID TYPE
+	{
+		this.type = aType;
+	}
+	public void setColor(Color aColor) //CHECK VALID COLOR
+	{
+		this.color = aColor;
+	}
+	
+	//Getters
+	public Color getColor()
+	{
+		return this.color;
+	}
+	public Type getType()
+	{
+		return this.type;
+	}
+	
+	//Other Methods
+	public String toString()
+	{
+		return color + " " + type;
+	}
+	
+	public boolean equals(Clothing aClothing)
+	{
+		return aClothing != null &&
+				aClothing.getType() == getType() &&
+				aClothing.getColor() == getColor();
+	}
+}

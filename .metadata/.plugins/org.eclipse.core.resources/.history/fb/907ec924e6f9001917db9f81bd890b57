@@ -1,0 +1,53 @@
+/*
+ * Written By Bradley Grose
+ */
+
+enum TypeCat{short_hair,bombay,ragdoll,sphinx,scottish_fold};
+
+public class HouseCat extends Cat{
+
+	private TypeCat type;
+			
+			//Constructors
+			public HouseCat()
+			{
+				this.type = type.bombay;
+			}
+			public HouseCat(String aName, double aWeight, mood aMood, TypeCat aType)
+			{
+				super(aName, aWeight, aMood);
+				setType(aType);
+			}
+			
+			//Setters
+			
+			public void setType(TypeCat aType)
+			{
+				this.type = aType;
+			}
+			
+			//Getters
+			public TypeCat getType()
+			{
+				return this.type;
+			}
+			
+			//other methods
+			
+			public String toString()
+			{
+				String tempType;
+				tempType = this.getType();
+				
+				
+				return super.toString()+" Type: "+getType();
+			}
+			
+			public boolean equals(HouseCat aCat)
+			{
+				return aCat != null &&
+						super.equals(aCat) &&
+						this.type == aCat.getType();
+			}
+	}
+

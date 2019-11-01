@@ -1,0 +1,58 @@
+/*
+ * Written by Bradley Grose
+ */
+public class Diamond extends ShapeBasics implements DiamondInterface {
+
+	private int width;
+	
+	//Constructor
+	public Diamond()
+	{
+		super();
+		width = 0;
+	}
+	
+	public Diamond(int width, int offset)
+	{
+		super(offset);
+		setWidth(width);
+	}
+	
+	//Setters
+	public void setWidth(int aWidth)
+	{
+		if(aWidth % 2 == 1 && aWidth > 0)
+			this.width = aWidth;
+	}
+	
+	public int getWidth()
+	{
+		return this.width;
+	}
+	
+	//Drawing voids
+	
+	public void drawHere()
+	{
+		drawTopV();
+		drawBottomV();
+	}
+	
+	public void drawTopV()
+	{
+		
+	}
+	
+	public void drawBottomV()
+	{
+		
+	}
+	
+	public static void skipSpaces(int lineNumber)
+	{
+		for(int i=0; i<lineNumber; i++)
+			System.out.print(" ");
+	}
+	
+	
+}

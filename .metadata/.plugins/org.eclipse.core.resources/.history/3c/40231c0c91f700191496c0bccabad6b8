@@ -1,0 +1,66 @@
+/*
+ * Written By Bradley Grose
+ */
+
+import java.util.Scanner;
+
+public class AnimalFrontEnd {
+
+	public static void main(String[] args) {
+		
+		Scanner keyboard = new Scanner(System.in);
+		int answer = 0;
+		
+		//Default Storing
+		String name = "";
+		mood mood;
+		double weight = 0;
+		int energyLevel = 0;
+		
+		while(answer!=3)
+		{
+			System.out.println("Would you like to\n" + 
+					"1. Add a cat or dog\n" + 
+					"2. Remove a cat or dog\n" +  
+					"3. Quit\n" + 
+					"Enter a selection");
+			answer = keyboard.nextInt();
+		
+			switch(answer)
+			{
+			case 1: //Add an Animal
+				int choice2 = 0;
+				System.out.println("Options:\n1. House Cat\n2. Leopard\n3. Domestic Dog\n4. Wolf");
+				choice2 = keyboard.nextInt();
+				switch(choice2)
+				{
+				case 1: //House Cat
+					System.out.println("Enter the leopard's name, weight, mood, and number of spots.");
+					//String name = keyboard.nextLine();
+					//double weight =
+					
+					//break;
+				case 2: //Leopard
+					
+					break;
+				case 3: //Dog
+					
+					break;
+				case 4: //Wolf
+					
+					break;
+				}
+				
+				break;
+			case 2:
+				
+				
+				break;
+			}
+		}
+		
+		System.exit(0);
+
+	}
+
+}

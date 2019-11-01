@@ -1,0 +1,63 @@
+/*
+ * Written By Bradley Grose
+ */
+public class Coffee {
+	private String name;
+	private int content;
+	private double cupAmount;
+	
+	public Coffee()
+	{
+		this.name = "none yet";
+		this.content= 50; //Min ammount
+		this.cupAmount = 0;
+	}
+	
+	public Coffee(String aName,int aContent)
+	{
+		this.setName(aName);
+		this.setContent(aContent);
+		this.RiskyAmount(aContent);
+	}
+	
+	//Create Accessors
+		public String getName()
+		{
+			return this.name;
+		}
+		public double getContent()
+		{
+			return this.content;
+		}
+		public double getRisky()
+		{
+			return this.cupAmount;
+		}
+		
+		//Mutators 
+		public void setName(String aName)
+		{
+			this.name = aName;
+		}
+		public void setContent(int aContent)
+		{
+			if((aContent>=50)&&(aContent<=300))
+			{
+				this.content = aContent;
+			}
+			else
+			{
+				System.out.println("This is not a normal amount of caffiene");
+			}
+		}
+		public void RiskyAmount(int aContent)
+		{
+			this.cupAmount = 180/((aContent/100)*6);
+		}
+		
+		
+		public String toString()
+		{
+			return "It would take "+this.cupAmount+" "+this.name+" coffees before it’s dangerous to drink more.";
+		}
+}

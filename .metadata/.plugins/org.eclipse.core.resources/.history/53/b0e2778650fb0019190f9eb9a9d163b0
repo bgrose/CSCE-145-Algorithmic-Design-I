@@ -1,0 +1,7 @@
+//Bradley Grose
+
+
+public class StaircaseLine implements Line{
+
+	public double getYPoint(double xPoint);
+}

@@ -1,0 +1,31 @@
+
+public class SawLine implements Line {
+	
+	//Instance Variable
+	private double modValue;
+
+	//Default Constructor
+	public SawLine() {
+		this.modValue = 10;
+	}
+
+	//Paramerized Constructor
+	public SawLine(double modValue) {
+		this.modValue = modValue;
+	}
+
+	//Getters
+	public double getModValue() {
+		return modValue;
+	}
+
+	//Seters
+	public void setModValue(double modValue) {
+		this.modValue = modValue;
+	}
+
+	//Sets Values for point
+	public double getYPoint(double xPoint) {
+		return xPoint % modValue;
+	}
+}

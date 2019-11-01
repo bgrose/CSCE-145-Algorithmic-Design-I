@@ -1,0 +1,78 @@
+/*
+ * Written By Bradley Grose
+ */
+public class Dresser {
+	private Clothing[][] clothes;
+	
+	//Constructors
+	public Dresser()
+	{
+		this.clothes = new Clothing[5][10];
+	}
+	
+	//Add Clothes
+	public void add(Clothing aClothing)
+	{
+		int i = 0;
+		
+		switch (aClothing.getType())
+		{
+		case UNDERGARMENT:
+			i = 0;
+		case SOCKS:
+			i = 1;
+		case STOCKINGS:
+			i = 1;
+		case TOP:
+			i = 2;
+		case BOTTOM:
+			i = 3;
+		case CAPE:
+			i = 4;
+		}	
+		for(int j=0; j<10; j++)
+		{
+			if(this.clothes[i][j] == null)
+			{
+				this.clothes[i][j] = aClothing;
+			}
+		}
+		
+	}
+	
+	public void remove(Clothing aClothing)
+	{
+		boolean removed = false;
+		
+		for (int i = 0; i < 5 && !removed; i++) 
+		{
+			for (int j = 0; j < 10 && !removed; j++)
+			{
+				if (clothes[i][j] == null) 
+					continue;
+				if (clothes[i][j].equals(aClothing))
+				{
+					clothes[i][j] = null;
+					removed = true;
+					break;
+				}
+			}
+		}
+	}
+	
+	
+	public void print()
+	{
+		for(int i=0; i<clothes.length; i++)
+		{
+			System.out.println("Drawer "+i);
+			for(int j=0; j<10; i++)
+			{
+				if(clothes[i][j] != null)
+				{
+					System.out.println(clothes[i][j].toString());
+				}
+			}
+		}
+	}
+}

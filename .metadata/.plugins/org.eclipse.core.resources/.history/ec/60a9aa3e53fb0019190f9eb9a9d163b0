@@ -1,0 +1,49 @@
+//Bradley Grose
+
+
+public class StaircaseLine implements Line{
+
+	//Instance Variable
+		private double width, height;
+
+		//Default Constructor
+		public StaircaseLine() 
+		{
+			this.width = 1;
+			this.height = 1;
+		}
+
+		//Paramerized Constructor
+		public StaircaseLine(double aWidth, double aHeight) {
+			this.width = aWidth;
+			this.height = aHeight;
+		}
+
+		//Getters
+		public double getWidth() 
+		{
+			return width;
+		}
+		public double getHeight()
+		{
+			return height;
+		}
+
+		//Seters
+		public void setWidth(double aWidth) 
+		{
+			this.width = aWidth;
+		}
+		
+		public void setHeight(double aHeight)
+		{
+			this.height = aHeight;
+		}
+
+		//Sets Values for point
+		public double getYPoint(double xCord) 
+		{
+			return (int) (xCord / width) * height;
+		}
+		
+}
