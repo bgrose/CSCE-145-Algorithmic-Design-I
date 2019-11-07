@@ -17,7 +17,7 @@ public class Library {
 	//Contructor
 	public Library()
 	{
-		this.Books = new Book[CLASSES][MAX_BOOKS];
+		Books = new Book[CLASSES][MAX_BOOKS];
 	}
 	
 	//Other methods
@@ -25,51 +25,125 @@ public class Library {
 	{
 		int ret=0;
 		double temp = aBook.getCallNumber();
-		ret=(int)(temp%100); //Gets class
+		ret=(int)(temp/100); //Gets class
 		return ret;
 	}
 	
 	public void addBook(Book aBook)
 	{
-		String aName, aAuthor;
-		double aCall;
 		
-		aName = aBook.getName();
-		aAuthor = aBook.getAuthor();
-		aCall = aBook.getCallNumber();
-		int index = classIndex(aBook);
+		int index = Library.classIndex(aBook);
 		
 		switch(index)
 		{
 		case 0:
-			Books[0][getOpen(0)] = new ComputerScienceBook(aName, aAuthor, aCall);
-			break;
+			ComputerScienceBook comp = new ComputerScienceBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[0][i] == null)
+				{
+					Books[0][i] = comp;
+					break;
+				}
+			}
 		case 1:
-			Books[1][getOpen(1)] = new PhilosophyBook(aName, aAuthor, aCall);
+			PhilosophyBook Phil = new PhilosophyBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[1][i] == null)
+				{
+					Books[1][i] = Phil;
+					break;
+				}
+			}
 			break;
 		case 2:
-			Books[2][getOpen(2)] = new ReligionBook(aName, aAuthor, aCall);
+			ReligionBook rel = new ReligionBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[2][i] == null)
+				{
+					Books[2][i] = rel;
+					break;
+				}
+			}
 			break;
 		case 3:
-			Books[3][getOpen(3)] = new SocialSciencesBook(aName, aAuthor, aCall);
+			SocialSciencesBook soc = new SocialSciencesBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[3][i] == null)
+				{
+					Books[3][i] = soc;
+					break;
+				}
+			}
 			break;
 		case 4:
-			Books[4][getOpen(4)] = 	new LanguageBook(aName, aAuthor, aCall);
+			LanguageBook lang = new LanguageBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[4][i] == null)
+				{
+					Books[4][i] = lang;
+					break;
+				}
+			}
 			break;
 		case 5:
-			Books[5][getOpen(5)] = new ScienceBook(aName, aAuthor, aCall);
+			ScienceBook sci = new ScienceBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[5][i] == null)
+				{
+					Books[5][i] = sci;
+					break;
+				}
+			}
 			break;
 		case 6:
-			Books[6][getOpen(6)] = new TechnologyBook(aName, aAuthor, aCall);
+			TechnologyBook tech = new TechnologyBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[6][i] == null)
+				{
+					Books[6][i] = tech;
+					break;
+				}
+			}
 			break;
 		case 7:
-			Books[7][getOpen(7)] = new ArtsBook(aName, aAuthor, aCall);
+			ArtsBook arts = new ArtsBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[7][i] == null)
+				{
+					Books[7][i] = arts;
+					break;
+				}
+			}
 			break;
 		case 8:
-			Books[8][getOpen(8)] = new LiteratureBook(aName, aAuthor, aCall);
+			LiteratureBook lit = new LiteratureBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[8][i] == null)
+				{
+					Books[8][i] = lit;
+					break;
+				}
+			}
 			break;
 		case 9:
-			Books[9][getOpen(9)] = new HistoryBook(aName, aAuthor, aCall);
+			HistoryBook hist = new HistoryBook(aBook.getName(), aBook.getAuthor(), aBook.getCallNumber());
+			for(int i=0; i<MAX_BOOKS; i++)
+			{
+				if(Books[0][i] == null)
+				{
+					Books[0][i] = hist;
+					break;
+				}
+			}
 			break;
 		}
 		
@@ -79,8 +153,6 @@ public class Library {
 	{
 		boolean removed = false;
 				
-		while(!removed)
-		{
 		for(int i=0; i<Books.length; i++)
 		{
 			for(int j=0; j<MAX_BOOKS; j++)
@@ -88,13 +160,16 @@ public class Library {
 				if(aBook.equals(Books[i][j]))
 				{
 					Books[i][j] = null;
-					removed=true;
+					removed = true;
+					break;
+				
 				}
 			}
+			if(removed)
+				break;
 		}
-		}
-		
 	}
+		
 	
 	public void printBooks()
 	{
@@ -105,7 +180,7 @@ public class Library {
 			{
 				if(Books[i][j]!=null)
 				{
-					System.out.println(book.toString(Books[i][j]));
+					System.out.println(Books[i][j].toString());
 				}
 			}
 		}
@@ -116,60 +191,36 @@ public class Library {
 		switch(i)
 		{
 	case 0:
-		Book book = new ComputerScienceBook();
-		book.toString();
+		System.out.println("Class 000 - Computer Science");
 		break;
 	case 1:
-		Book book1 = new PhilosophyBook();
-		book1.toString();
+		System.out.println("Class 100 - Philosophy");
 		break;
 	case 2:
-		Book book2 = new ReligionBook();
-		book2.toString();
+		System.out.println("Class 200 - Religion");
 		break;
 	case 3:
-		Book book3 = new SocialSciencesBook();
-		book3.toString();
+		System.out.println("Class 300 - Social Science");
 		break;
 	case 4:
-		Book book4 = new LanguageBook();
-		book4.toString();
+		System.out.println("Class 400 - Language");
 		break;
 	case 5:
-		Book book5 = new ScienceBook();
-		book5.toString();
+		System.out.println("Class 500 - Science");
 		break;
 	case 6:
-		Book book6 = new TechnologyBook();
-		book6.toString();
+		System.out.println("Class 600 - Technology");
 		break;
 	case 7:
-		Book book7 = new ArtsBook();
-		book7.toString();
+		System.out.println("Class 700 - Arts");
 		break;
 	case 8:
-		Book book8 = new LiteratureBook();
-		book8.toString();
+		System.out.println("Class 800 - Literature");
 		break;
 	case 9:
-		Book book9 = new HistoryBook();
-		book9.toString();
+		System.out.println("Class 900 - History");
 		break;
 		}
 	}
 	
-	public int getOpen(int aIndex)
-	{
-		int spot = -1;
-		for(int i=0; i<MAX_BOOKS; i++)
-		{
-			if(Books[aIndex][i]==null)
-			{
-				spot = i;
-				break;
-			}
-		}
-		return spot;
-	
-	}
 }

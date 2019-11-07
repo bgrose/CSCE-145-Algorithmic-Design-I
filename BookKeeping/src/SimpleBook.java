@@ -53,7 +53,7 @@ public class SimpleBook implements Book{
 	}
 	
 	//Others
-	public String toString(Book aBook)
+	public String toString()
 	{
 		return this.getName()+"\n"+this.getAuthor()+"\n"+this.getCallNumber();
 	}
