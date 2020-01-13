@@ -1,9 +1,11 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1567206552000
-configurationInstallLocation=/C\:/Users/bradl/eclipse/java-2019-06/eclipse/
+codemix.dont.show.upsell.until=1577068986928
+configurationInstallLocation=/C\:/Users/bradl/eclipse/java-2019-09/eclipse/
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1572641446939
-lastConfiguration=1572641542161
-newinstall=true
+last.download.attempt.time=1577928211752
+lastConfiguration=1577928192494
+newinstall=false
+showWelcomeDialog=false
 workbench.theme=Dark Gray
