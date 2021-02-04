@@ -1,3 +1,4 @@
+@SuppressWarnings("all")
 
 public class ShapeBasics implements ShapeInterface{
 	private int offset;
@@ -9,7 +10,7 @@ public class ShapeBasics implements ShapeInterface{
 		this.setOffset(anOffset);
 	}
 	
-	public int getOffset() {
+	public int getOffeset() {
 		return this.offset;
 	}
 	public void setOffset(int anOffset) {

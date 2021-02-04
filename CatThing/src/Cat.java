@@ -62,6 +62,6 @@ public class Cat {
 	public boolean equals(Cat aCat)
 	{
 		return this.name.contentEquals(aCat.getName()) &&
-				this.weight == aCat.getWeight())
+				this.weight == aCat.getWeight();
 	}
 }
